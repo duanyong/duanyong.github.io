@@ -1,10 +1,10 @@
 ---
 layout:     post
 title:      "java的classloader"
-subtitle:   "「Stay hungry. Stay foolish.」"
+subtitle:   "对比jetty的classloader说明其原理"
 date:       2015-01-02
 author:     "duanyong"
-tags:       "java classloader"
+tags:       "java jetty classloader"
 
 ---
 
