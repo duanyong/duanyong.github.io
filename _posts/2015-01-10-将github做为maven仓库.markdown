@@ -18,6 +18,7 @@ published:      true
 
 ### 如何配置
 总体来说配置好项目的pom.xml文件即可，我拿自己的项目来做示例（提供了最基础的功能）。
+
 1. 修改pom.xml文件，创建好项目的描述关系和依赖关系;
 2. 生成maven所需要的maven-metadata.xml描述文件;
 3. 配置github发插件，自动发布到github;
@@ -25,6 +26,7 @@ published:      true
 
 
 + **pom.xml**
+
 ```java
     <!-- 基础信息，项目的唯一标识 -->
     <groupId>me.duanyong</groupId>      <!-- 所属组织，一般用域名区分 -->
