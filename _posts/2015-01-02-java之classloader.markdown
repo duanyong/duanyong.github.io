@@ -5,7 +5,6 @@ subtitle:   "「Stay hungry. Stay foolish.」"
 date:       2015-01-02
 author:     "duanyong"
 tags:       "java classloader"
-<!--header-img: "img/post-bg-2015.jpg"-->
 
 ---
 
