@@ -27,7 +27,7 @@ published:      true
 
 + **pom.xml**
 
-```java
+  ```xml
     <!-- 基础信息，项目的唯一标识 -->
     <groupId>me.duanyong</groupId>      <!-- 所属组织，一般用域名区分 -->
     <artifactId>handswork</artifactId>  <!-- 所属项目，一般用二级域名区分 -->
@@ -95,7 +95,8 @@ published:      true
 ```
 
 + **~/.m2/settings.xml**
-```java
+
+```xml
     <settings>
         <servers>
             <server>
@@ -107,7 +108,8 @@ published:      true
     </settings>
 ```
 + **其它项目依赖上面的项目（在项目的pom.xml中添加）**
-```java
+
+```xml
     <repositories>
         <repository>
             <id>me.duanyong</id>
