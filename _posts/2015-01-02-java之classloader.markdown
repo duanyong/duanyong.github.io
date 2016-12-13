@@ -7,6 +7,7 @@ header-img:     img/post-bg-2015.jpg
 tags:           java jetty classloader
 keyword:        java,jetty,classloader,原理,介绍
 description:    简单介绍java的ClassLoader原理，然后通过对比Jetty框架的ClassLoader来说明如何使用ClassLoader
+published:      false
 ---
 
 ### 何为ClassLoader？
