@@ -132,7 +132,7 @@ published:      true
     </dependencies>
 ```
 
-
+### 如何发布
 1. 打开IDEA右侧的**"Maven Projects"**项目的LifeCycle（生命周期）
 2. 双击LifeCycle的clean，将之前的编译文件全删除
 3. 双击LifeCycle的deploy发布。
