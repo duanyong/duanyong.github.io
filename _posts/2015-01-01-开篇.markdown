@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      "Host: duanyong.me"
-subtitle:   " \"duanyong\""
-date:       2015-01-01 12:00:00
+title:      "开篇"
+subtitle:   "「Stay hungry. Stay foolish.」"
+date:       2015-01-01
 author:     "duanyong"
 header-img: "img/post-bg-2015.jpg"
 
