@@ -2,7 +2,7 @@
 
 
 # .gitignore for github pages
-_sites/
+_site/
 
 # .gitignore for maven 
 target/
