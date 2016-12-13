@@ -1,6 +1,6 @@
 # Site settings
 title: duanyong
-SEOTitle: 阿段 java php 技术文章 原创 duanyong.me
+SEOTitle: duanyong
 header-img: img/home-bg.jpg
 email: hiduan@qq.com
 description: "记录有着java与php相关的技术博文 duanyong.me"
@@ -32,7 +32,7 @@ anchorjs: true                          # if you want to customize anchor. check
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
+gems: [jekyll-paginate, jekyll-sitemap]
 
 
 
