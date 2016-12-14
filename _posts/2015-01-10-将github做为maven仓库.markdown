@@ -24,6 +24,7 @@ published:      true
 3. 配置github发插件，自动发布到github;
 4. 项目引用。
 
+见如下配置
 
 + **pom.xml**
 ```
@@ -107,7 +108,7 @@ published:      true
 ```
     
 + 其它项目依赖上面的项目（在项目的pom.xml中添加）
-```xml
+```
     <repositories>
         <repository>
             <id>me.duanyong</id>
