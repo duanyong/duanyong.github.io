@@ -1,7 +1,7 @@
 ---
 layout:         post
 title:          将github做为maven仓库
-subtitle:       将项目发布在maven中，通过pom.xml引用
+subtitle:       将项目发布在github中，通过pom.xml引用
 date:           2015-01-10
 header-img:     img/post-bg-2015.jpg
 tags:           maven github pom
@@ -26,8 +26,7 @@ published:      true
 
 
 + **pom.xml**
-
-  ```xml
+```xml
     <!-- 基础信息，项目的唯一标识 -->
     <groupId>me.duanyong</groupId>      <!-- 所属组织，一般用域名区分 -->
     <artifactId>handswork</artifactId>  <!-- 所属项目，一般用二级域名区分 -->
@@ -94,21 +93,20 @@ published:      true
     </properties>
 ```
 
-+ **~/.m2/settings.xml**
-
++ ~/.m2/settings.xml
 ```xml
-    <settings>
-        <servers>
-            <server>
-                <id>github</id>
-                <username>username@gmail.com</username>
-                <password>password</password>
-            </server>
-        </servers>
-    </settings>
+        <settings>
+            <servers>
+                <server>
+                    <id>github</id>
+                    <username>username@gmail.com</username>
+                    <password>password</password>
+                </server>
+            </servers>
+        </settings>
 ```
-+ **其它项目依赖上面的项目（在项目的pom.xml中添加）**
-
+    
++ 其它项目依赖上面的项目（在项目的pom.xml中添加）
 ```xml
     <repositories>
         <repository>
@@ -122,7 +120,7 @@ published:      true
         </repository>
     </repositories>
 ```
-```java
+```xml
     <dependencies>
         <dependency>
             <groupId>me.duanyong</groupId>
