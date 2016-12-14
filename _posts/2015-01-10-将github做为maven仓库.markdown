@@ -2,8 +2,6 @@
 layout:         post
 title:          将github做为maven仓库
 subtitle:       将项目发布在github中，通过pom.xml引用
-date:           2015-01-10
-header-img:     img/post-bg-2015.jpg
 tags:           maven github pom
 keyword:        maven,pom,github,依赖关系,原理,介绍
 description:    通过简单的几步就可以将github做为maven仓库，这样将项目的依赖关系单独出来，实现模块通过maven建立依赖关系，方便项目部署与维护。
@@ -13,7 +11,7 @@ published:      true
 ### 为何使用maven？
 自己大大小小的项目上百了吧。从前端到后端、从javascript到php，java都接触过。在项目依赖上从手工到自动，大大小小的坑不知道填了多少。
 
-但接触了grunb和meavn发现真的解脱了，所有的脚本依赖、编译依赖通过修改配置文件可以解决许多问题。
+但接触了grunb和meavn发现真的解脱了，所有的脚本依赖、编译依赖通过修改配置文件可以解决。
 
 
 ### 如何配置
