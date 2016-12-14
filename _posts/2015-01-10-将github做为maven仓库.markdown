@@ -25,7 +25,7 @@ published:      true
 见如下配置
 
 + **pom.xml**
-```
+---
     <!-- 基础信息，项目的唯一标识 -->
     <groupId>me.duanyong</groupId>      <!-- 所属组织，一般用域名区分 -->
     <artifactId>handswork</artifactId>  <!-- 所属项目，一般用二级域名区分 -->
@@ -90,7 +90,7 @@ published:      true
         <!-- 使用~/.m2/settings.xml文件中的用户名和密码登录github -->
         <github.global.server>github</github.global.server>
     </properties>
-```
+---
 
 + ~/.m2/settings.xml
 ```
