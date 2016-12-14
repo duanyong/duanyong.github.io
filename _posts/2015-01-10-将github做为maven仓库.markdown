@@ -24,7 +24,8 @@ description:    通过简单的几步就可以将github做为maven仓库，这�
 见如下配置
 
 + pom.xml
-```
+
+```xml
 <!-- 基础信息，项目的唯一标识 -->
 <groupId>me.duanyong</groupId>      <!-- 所属组织，一般用域名区分 -->
 <artifactId>handswork</artifactId>  <!-- 所属项目，一般用二级域名区分 -->
@@ -92,7 +93,8 @@ description:    通过简单的几步就可以将github做为maven仓库，这�
 ```
 
 + ~/.m2/settings.xml
-```
+
+```xml
 <settings>
     <servers>
         <server>
@@ -105,7 +107,8 @@ description:    通过简单的几步就可以将github做为maven仓库，这�
 ```
     
 + 其它项目依赖上面的项目（在项目的pom.xml中添加）
-```
+
+```xml
 <repositories>
     <repository>
         <id>me.duanyong</id>
@@ -118,7 +121,7 @@ description:    通过简单的几步就可以将github做为maven仓库，这�
     </repository>
 </repositories>
 ```
-```
+```xml
 <dependencies>
     <dependency>
         <groupId>me.duanyong</groupId>
