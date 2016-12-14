@@ -25,108 +25,108 @@ published:      true
 见如下配置
 
 + **pom.xml**
----
-    <!-- 基础信息，项目的唯一标识 -->
-    <groupId>me.duanyong</groupId>      <!-- 所属组织，一般用域名区分 -->
-    <artifactId>handswork</artifactId>  <!-- 所属项目，一般用二级域名区分 -->
-    <version>0.1-SNAPSHOT</version>     <!-- 版本信息，区别不同版本 -->
-    <packaging>jar</packaging>          <!-- 打包方式：jar、war、ear、pom（没用过ear和pom打包） -->
+```
+<!-- 基础信息，项目的唯一标识 -->
+<groupId>me.duanyong</groupId>      <!-- 所属组织，一般用域名区分 -->
+<artifactId>handswork</artifactId>  <!-- 所属项目，一般用二级域名区分 -->
+<version>0.1-SNAPSHOT</version>     <!-- 版本信息，区别不同版本 -->
+<packaging>jar</packaging>          <!-- 打包方式：jar、war、ear、pom（没用过ear和pom打包） -->
 
-    <modelVersion>4.0.0</modelVersion>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-            <!-- start 打包使用的插件 -->
-            <plugin>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>2.8.1</version>
-                <configuration>
-                    <!-- 将编译之后的文件放到编译目录的repository下 -->
-                    <altDeploymentRepository>
-                        internal.repo::default::file://${project.build.directory}/repository/
-                    </altDeploymentRepository>
-                </configuration>
-            </plugin>
-            <!-- end 打包使用的插件 -->
+<modelVersion>4.0.0</modelVersion>
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+        <!-- start 打包使用的插件 -->
+        <plugin>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <version>2.8.1</version>
+            <configuration>
+                <!-- 将编译之后的文件放到编译目录的repository下 -->
+                <altDeploymentRepository>
+                    internal.repo::default::file://${project.build.directory}/repository/
+                </altDeploymentRepository>
+            </configuration>
+        </plugin>
+        <!-- end 打包使用的插件 -->
 
-            <!-- 重点 *** 将打包之后的jar或war通过github发布插件来处理 *** -->
-            <plugin>
-                <groupId>com.github.github</groupId>
-                <artifactId>site-maven-plugin</artifactId>
-                <configuration>
-                    <message>Generated site for ${project.artifactId} ${project.version}</message>      <!-- git commit message -->
-                    <noJekyll>true</noJekyll>                                                           <!-- disable webpage processing -->
-                    <outputDirectory>${project.build.directory}/repository</outputDirectory>            <!-- matches distribution management repository url above -->
-                    <!-- 由于我们用snapshot或者release的分支来发布，就可以修改下面的分支名称 -->
-                    <branch>refs/heads/snapshot</branch>                                                <!-- remote branch name -->
-                    <includes>
-                        <include>**/*</include>
-                    </includes>
-                    <repositoryName>handswork</repositoryName>      <!-- github上用于发布的仓库 -->
-                    <repositoryOwner>XXXXXXXX</repositoryOwner>     <!-- github上显示的昵称（不是登录名） -->
-                </configuration>
-                <executions>
-                    <!-- 参考 引用 1 -->
-                    <execution>
-                        <goals>
-                            <goal>site</goal>
-                        </goals>
-                        <phase>deploy</phase>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+        <!-- 重点 *** 将打包之后的jar或war通过github发布插件来处理 *** -->
+        <plugin>
+            <groupId>com.github.github</groupId>
+            <artifactId>site-maven-plugin</artifactId>
+            <configuration>
+                <message>Generated site for ${project.artifactId} ${project.version}</message>      <!-- git commit message -->
+                <noJekyll>true</noJekyll>                                                           <!-- disable webpage processing -->
+                <outputDirectory>${project.build.directory}/repository</outputDirectory>            <!-- matches distribution management repository url above -->
+                <!-- 由于我们用snapshot或者release的分支来发布，就可以修改下面的分支名称 -->
+                <branch>refs/heads/snapshot</branch>                                                <!-- remote branch name -->
+                <includes>
+                    <include>**/*</include>
+                </includes>
+                <repositoryName>handswork</repositoryName>      <!-- github上用于发布的仓库 -->
+                <repositoryOwner>XXXXXXXX</repositoryOwner>     <!-- github上显示的昵称（不是登录名） -->
+            </configuration>
+            <executions>
+                <!-- 参考 引用 1 -->
+                <execution>
+                    <goals>
+                        <goal>site</goal>
+                    </goals>
+                    <phase>deploy</phase>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
 
-    <properties>
-        <!-- github server corresponds to entry in ~/.m2/settings.xml -->
-        <!-- 使用~/.m2/settings.xml文件中的用户名和密码登录github -->
-        <github.global.server>github</github.global.server>
-    </properties>
----
+<properties>
+    <!-- github server corresponds to entry in ~/.m2/settings.xml -->
+    <!-- 使用~/.m2/settings.xml文件中的用户名和密码登录github -->
+    <github.global.server>github</github.global.server>
+</properties>
+```
 
 + ~/.m2/settings.xml
 ```
-        <settings>
-            <servers>
-                <server>
-                    <id>github</id>
-                    <username>username@gmail.com</username>
-                    <password>password</password>
-                </server>
-            </servers>
-        </settings>
+<settings>
+    <servers>
+        <server>
+            <id>github</id>
+            <username>username@gmail.com</username>
+            <password>password</password>
+        </server>
+    </servers>
+</settings>
 ```
     
 + 其它项目依赖上面的项目（在项目的pom.xml中添加）
 ```
-    <repositories>
-        <repository>
-            <id>me.duanyong</id>
-            <!-- 用户duanyong下handswork仓库的snapshot分支 -->
-            <url>https://raw.github.com/duanyong/handswork/snapshot</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
+<repositories>
+    <repository>
+        <id>me.duanyong</id>
+        <!-- 用户duanyong下handswork仓库的snapshot分支 -->
+        <url>https://raw.github.com/duanyong/handswork/snapshot</url>
+        <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+        </snapshots>
+    </repository>
+</repositories>
 ```
 ```
-    <dependencies>
-        <dependency>
-            <groupId>me.duanyong</groupId>
-            <artifactId>handswork</artifactId>
-            <version>0.1-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
+<dependencies>
+    <dependency>
+        <groupId>me.duanyong</groupId>
+        <artifactId>handswork</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </dependency>
+</dependencies>
 ```
 
 ### 如何发布
