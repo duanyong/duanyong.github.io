@@ -5,7 +5,6 @@ subtitle:       将项目发布在github中，通过pom.xml引用
 tags:           maven github pom
 keyword:        maven,pom,github,依赖关系,原理,介绍
 description:    通过简单的几步就可以将github做为maven仓库，这样将项目的依赖关系单独出来，实现模块通过maven建立依赖关系，方便项目部署与维护。
-published:      true
 ---
 
 ### 为何使用maven？
@@ -24,7 +23,7 @@ published:      true
 
 见如下配置
 
-+ **pom.xml**
++ pom.xml
 ```
 <!-- 基础信息，项目的唯一标识 -->
 <groupId>me.duanyong</groupId>      <!-- 所属组织，一般用域名区分 -->

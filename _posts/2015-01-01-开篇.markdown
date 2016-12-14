@@ -7,8 +7,6 @@ header-img:     img/post-bg-2015.jpg
 tags:           ""
 keyword:        ""
 description:    "很早之前就想开通自己的博客，也在javaeye上写过很多文章。甚至自己也用PHP实现一个，但界面太丑而放弃。无意之间发现github pages结合jekyll，再加上github上几套模板，经过几天的折腾，终于配置完成，可以和大家见面了。"
-
-
 ---
 
 
